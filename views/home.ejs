@@ -1,0 +1,23 @@
+<%- include('partials/header'); -%>
+
+<h1><%=titleName%></h1>
+
+<p> <%=content%></p>
+
+
+<% postarray.forEach(post => {   %>
+
+<% if(post.name!=="homeStartingContent" && post.name!=="aboutContent" && post.name!=="contactContent"){ %> 
+  <div class="post"> 
+    <h2> <%=post.name%></h2>
+    
+    <p><%=post.content.substring(0,100)%>... </p>
+    <a href="./posts/<%= post.name%> ">Read more</a>
+
+  </div>
+    
+  <% } %> 
+    <% });  %>
+
+
+<%- include('partials/footer'); -%>
